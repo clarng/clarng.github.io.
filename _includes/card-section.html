@@ -1,15 +1,3 @@
 <div class="card-section">
-  {% assign cards = site.data.cards %}
-
-  {% for card in cards %}
-  <div class="card">
-    <div class="card-logo">
-      <img src="{{ card.logo | relative_url }}" alt="{{ card.title }}">
-    </div>
-    <div class="card-content">
-      {{ card.content | split: "
-" | join: "</p><p>" | prepend: "<p>" | append: "</p>" }}
-    </div>
-  </div>
-  {% endfor %}
+  {% include card-content.html %}
 </div> 

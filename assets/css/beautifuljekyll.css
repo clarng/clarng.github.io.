@@ -1136,7 +1136,8 @@ pre {
   align-items: flex-start;
   margin-bottom: 2rem;
   padding: 1rem;
-  background-color: var(--page-col);
+  background: none;
+  border: none;
 }
 
 .card-logo {
@@ -1154,7 +1155,7 @@ pre {
 }
 
 .card-content {
-  flex-grow: 1;
+  flex: 1;
 }
 
 .card-content p {
@@ -1167,13 +1168,11 @@ pre {
 
 @media (max-width: 768px) {
   .card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
+    align-items: flex-start;
   }
   
   .card-logo {
-    margin-right: 0;
-    margin-bottom: 1rem;
+    margin-right: 1rem;
   }
 }
