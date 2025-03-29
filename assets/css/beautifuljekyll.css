@@ -1124,3 +1124,65 @@ pre {
     display: inline-block;
   }
 }
+
+/* --- Card Section --- */
+
+.card-section {
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--page-col);
+  border: 1px solid var(--navbar-border-col);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.card-logo {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  margin-right: 1.5rem;
+}
+
+.card-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.card-content p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+  color: var(--text-col);
+}
+
+.card-content p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-logo {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
