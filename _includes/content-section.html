@@ -1,0 +1,21 @@
+{% assign section = include.section %}
+
+{% case section.type %}
+  {% when 'cards' %}
+    <div class="card-section">
+      {% for item in section.items %}
+      <div class="card">
+        <div class="card-logo">
+          <img src="{{ item.logo | relative_url }}" alt="{{ item.title }}">
+        </div>
+        <div class="card-content">
+          {{ item.content | split: "
+" | join: "</p><p>" | prepend: "<p>" | append: "</p>" }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  {% else %}
+    <!-- Add more section types here -->
+{% endcase %} 

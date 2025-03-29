@@ -1157,6 +1157,8 @@ pre {
 
 .card-content {
   flex: 1;
+  color: var(--text-col);
+  line-height: 1.6;
 }
 
 .card-content p {
