@@ -1133,12 +1133,17 @@ pre {
 
 .card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 2rem;
-  padding: 0;
+  padding: 1.5rem;
   background: none;
   border: none;
   box-shadow: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
 }
 
 .card-logo {
@@ -1146,6 +1151,9 @@ pre {
   width: 80px;
   height: 80px;
   margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-logo img {
@@ -1159,10 +1167,15 @@ pre {
   flex: 1;
   color: var(--text-col);
   line-height: 1.6;
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  padding: 0.5rem 0;
 }
 
 .card-content p {
-  margin: 0 0 1rem 0;
+  margin: 0;
+  line-height: 1.6;
 }
 
 .card-content p:last-child {
@@ -1171,11 +1184,17 @@ pre {
 
 @media (max-width: 768px) {
   .card {
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    text-align: center;
   }
   
   .card-logo {
-    margin-right: 1rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .card-content {
+    min-height: auto;
+    padding: 0;
   }
 }
