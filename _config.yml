@@ -15,7 +15,12 @@ title: Clarence Ng (Wu)
 # Your name to show in the footer
 # author: Clarence Ng
 
+# Control visibility of navigation bar
+# Set to true to show the navigation bar at the top of the page
 show-nav: false
+
+# Control visibility of footer and footer scripts
+show-footer: false
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -53,13 +58,13 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   email: "clarence.wybng@gmail.com"
-  rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: "@daattali"
-  whatsapp: 15551212
+  # rss: true  # remove this line if you don't want to show an RSS link at the bottom
+  # facebook: deanattali
+  # github: daattali
+  # twitter: daattali
+  # patreon: DeanAttali
+  # youtube: "@daattali"
+  # whatsapp: 15551212
 #  medium: yourname
 #  reddit: yourname or r/yoursubreddit
 #  linkedin: daattali
