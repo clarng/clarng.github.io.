@@ -10,10 +10,12 @@
 ############################
 
 # Name of website
-title: 
+title: Clarence Ng (Wu)
 
 # Your name to show in the footer
 # author: Clarence Ng
+
+show-avatar: false
 
 ###############################################
 # --- List of links in the navigation bar --- #
