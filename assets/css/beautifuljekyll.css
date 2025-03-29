@@ -669,109 +669,109 @@ footer .footer-custom-content {
 /* --- Post and page headers --- */
 
 .intro-header {
-  margin: 5rem 0 1.25rem;
-  position: relative;
-}
-.intro-header.big-img {
-  background: no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  margin-top: 3.1875rem; /* The small navbar is 50px tall + 1px border */
-  margin-bottom: 2.1875rem;
-}
-nav.top-nav-short-permanent ~ header > .intro-header {
-  margin-top: 5rem;
-}
-nav.top-nav-short-permanent ~ header > .intro-header.big-img {
-  margin-top: 3.1875rem;
-}
-.intro-header.big-img .big-img-transition {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  background: no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  -webkit-transition: opacity 1s linear;
-  -moz-transition: opacity 1s linear;
-  transition: opacity 1s linear;
-}
-.intro-header .page-heading {
+  {% unless site.show-nav %}
+  margin-top: 0;
+  padding: 0;
+  {% endunless %}
   text-align: center;
+  color: var(--text-col);
+  background: var(--page-col);
 }
+
+.intro-header .page-heading,
+.intro-header .post-heading {
+  {% unless site.show-nav %}
+  padding: 0;
+  margin: 0;
+  {% endunless %}
+}
+
+.intro-header .page-heading h1,
+.intro-header .post-heading h1 {
+  {% unless site.show-nav %}
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  {% endunless %}
+}
+
+.intro-header .page-heading .subheading,
+.intro-header .post-heading .subheading {
+  {% unless site.show-nav %}
+  display: none;
+  {% endunless %}
+}
+
+.intro-header > .img-desc {
+  {% unless site.show-nav %}
+  display: none;
+  {% endunless %}
+}
+
+.intro-header.big-img {
+  {% unless site.show-nav %}
+  margin-top: 0;
+  padding: 0;
+  background: none;
+  {% endunless %}
+}
+
 .intro-header.big-img .page-heading,
 .intro-header.big-img .post-heading {
-  padding: 6.25rem 0;
-  color: #FFF;
-  text-shadow: 1px 1px 3px #000;
+  {% unless site.show-nav %}
+  padding: 0;
+  margin: 0;
+  {% endunless %}
 }
-.intro-header .page-heading h1 {
-  margin-top: 0;
-  font-size: 3.125rem;
+
+.intro-header.big-img .page-heading h1,
+.intro-header.big-img .post-heading h1 {
+  {% unless site.show-nav %}
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  {% endunless %}
 }
-.intro-header .post-heading h1 {
-  margin-top: 0;
-  font-size: 2.1875rem;
-}
-.intro-header .page-heading .page-subheading,
-.intro-header .post-heading .post-subheading {
-  font-size: 1.6875rem;
-  line-height: 1.1;
-  display: block;
-  font-family: var(--header-font);
-  font-weight: 300;
-  margin: 0.625rem 0 0;
-}
-.intro-header .post-heading .post-subheading {
-  margin-bottom: 1.25rem;
-}
-.intro-header.big-img .page-heading .page-subheading,
-.intro-header.big-img .post-heading .post-subheading {
-  font-weight: 400;
-}
-.intro-header.big-img .page-heading hr {
-  box-shadow: 1px 1px 3px #000;
-  -webkit-box-shadow: 1px 1px 3px #000;
-  -moz-box-shadow: 1px 1px 3px #000;
-}
-.intro-header.big-img .post-heading .post-meta {
-  color: #EEE;
-}
-.intro-header.big-img .img-desc {
-  background: rgba(30, 30, 30, 0.6);
-  position: absolute;
-  padding: 0.3125rem 0.625rem;
-  font-size: 0.6875rem;
-  color: #EEE;
-  font-family: var(--header-font);
-  right: 0;
-  bottom: 0;
+
+.intro-header.big-img .page-heading .subheading,
+.intro-header.big-img .post-heading .subheading {
+  {% unless site.show-nav %}
   display: none;
+  {% endunless %}
 }
+
+.intro-header.big-img > .img-desc {
+  {% unless site.show-nav %}
+  display: none;
+  {% endunless %}
+}
+
+.intro-header.big-img .big-img-transition {
+  {% unless site.show-nav %}
+  display: none;
+  {% endunless %}
+}
+
 @media (min-width: 1200px) {
   .intro-header {
-    margin-top: 8.125rem;
+    {% unless site.show-nav %}
+    margin-top: 0;
+    {% endunless %}
   }
   .intro-header.big-img {
-    margin-top: 5.6875rem; /* Full navbar is small navbar + 20px padding on each side when expanded */
-  }
-  .intro-header.big-img .page-heading,
-  .intro-header.big-img .post-heading {
-    padding: 9.375rem 0;
+    {% unless site.show-nav %}
+    margin-top: 0;
+    {% endunless %}
   }
   .intro-header .page-heading h1 {
-    font-size: 5rem;
+    {% unless site.show-nav %}
+    font-size: 0;
+    {% endunless %}
   }
   .intro-header .post-heading h1 {
-    font-size: 3.125rem;
-  }
-  .intro-header.big-img .img-desc {
-    font-size: 0.875rem;
+    {% unless site.show-nav %}
+    font-size: 0;
+    {% endunless %}
   }
 }
 
