@@ -1135,9 +1135,10 @@ pre {
   display: flex;
   align-items: flex-start;
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 0;
   background: none;
   border: none;
+  box-shadow: none;
 }
 
 .card-logo {

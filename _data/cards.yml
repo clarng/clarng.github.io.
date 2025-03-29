@@ -1,13 +1,4 @@
-- title: "First Card"
+- title: "About Me"
   logo: "/assets/img/avatar-icon.png"
   content: |
-    Welcome to my website! This is the first card showcasing some interesting content. You can add multiple paragraphs here to describe your services, projects, or any other information you'd like to share.
-
-    Feel free to customize this content with your own text, images, and styling. The card layout will automatically adjust to fit your content while maintaining a clean and professional look.
-
-- title: "Second Card"
-  logo: "/assets/img/avatar-icon.png"
-  content: |
-    This is the second card with different content. You can use this space to highlight another aspect of your work or provide additional information to your visitors.
-
-    The cards are responsive and will stack vertically on mobile devices, ensuring a great viewing experience across all screen sizes. 
+    Hello world
