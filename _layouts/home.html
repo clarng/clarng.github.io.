@@ -10,14 +10,19 @@ layout: page
   </div>
 </div>
 
-<div class="container-md">
-  <div class="row">
-    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+<div class="">
+  <div class="">
+    <div class="">
       <div class="card-section">
         {% for card in site.data.cards %}
         <div class="card">
+          {% if card.logo %}
           <div class="card-logo">
             <img src="{{ card.logo | relative_url }}" alt="{{ card.title }}">
+          </div>
+          {% endif %}
+          <div class="card-content">
+            {{ card.title }}
           </div>
           <div class="card-content">
             {{ card.content | split: "
@@ -29,6 +34,27 @@ layout: page
     </div>
   </div>
 </div>
+
+<!-- <div class="container-md">
+  <div class="row">
+    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <div class="card-section">
+        {% for card in site.data.cards %}
+        <div class="card">
+          <div class="card-logo">
+            <img src="{{ card.logo | relative_url }}" alt="{{ card.title }}">
+          </div>
+          {{ card.title }}
+          <div class="card-content">
+            {{ card.content | split: "
+" | join: "</p><p>" | prepend: "<p>" | append: "</p>" }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div> -->
 
 {% assign posts = paginator.posts | default: site.posts %}
 

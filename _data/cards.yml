@@ -1,8 +1,6 @@
-- title: "About Me"
-  logo: "/assets/img/avatar-icon.png"
+- logo: "/assets/img/avatar-icon.png"
   content: |
     These days, I build ML systems to accelerate research.
 - title: "OpenAI"
-  logo: "/assets/img/flower.svg"
   content: |
-    These days, I build ML systems to accelerate research.
+    un
