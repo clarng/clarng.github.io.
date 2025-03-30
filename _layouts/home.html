@@ -25,8 +25,10 @@ layout: page
             {{ card.title }}
           </div>
           <div class="card-content">
-            {{ card.content | split: "
-" | join: "</p><p>" | prepend: "<p>" | append: "</p>" }}
+            {% for c in card.content %}
+              <p style="display: block;">{{ c }}</p><br>
+              <!-- {{ c | split: "" | join: "</p><p>" | prepend: "<p>" | append: "</p>" }} -->
+            {% endfor %}
           </div>
         </div>
         {% endfor %}

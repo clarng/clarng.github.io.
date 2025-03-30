@@ -9,8 +9,9 @@
           <img src="{{ item.logo | relative_url }}" alt="{{ item.title }}">
         </div>
         <div class="card-content">
-          {{ item.content | split: "
-" | join: "</p><p>" | prepend: "<p>" | append: "</p>" }}
+          {% for c in section.content %}
+            {{ c | split: "" | join: "</p><p>" | prepend: "<p>" | append: "</p>" }}
+          {% endfor %}
         </div>
       </div>
       {% endfor %}
