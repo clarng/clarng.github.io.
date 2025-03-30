@@ -1129,13 +1129,14 @@ pre {
 
 .card-section {
   margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card {
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
   background: none;
   border: none;
   box-shadow: none;
@@ -1170,12 +1171,14 @@ pre {
   display: flex;
   align-items: center;
   min-height: 80px;
-  padding: 0.5rem 0;
 }
 
 .card-content p {
   margin: 0;
   line-height: 1.6;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .card-content p:last-child {
@@ -1186,6 +1189,7 @@ pre {
   .card {
     flex-direction: column;
     text-align: center;
+    width: 100%;
   }
   
   .card-logo {
@@ -1196,5 +1200,6 @@ pre {
   .card-content {
     min-height: auto;
     padding: 0;
+    width: 100%;
   }
 }
