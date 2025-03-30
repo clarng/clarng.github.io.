@@ -1143,9 +1143,6 @@ pre {
   transition: transform 0.2s ease-in-out;
 }
 
-.card:hover {
-  transform: translateY(-2px);
-}
 
 .card-logo {
   flex-shrink: 0;
