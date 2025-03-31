@@ -15,21 +15,61 @@ layout: page
     <div class="">
       <div class="card-section">
         {% for card in site.data.cards %}
-        <div class="card">
-          {% if card.logo %}
-          <div class="card-logo">
-            <img src="{{ card.logo | relative_url }}" alt="{{ card.title }}">
-          </div>
-          {% endif %}
-          <div class="card-content">
-            {{ card.title }}
-          </div>
-          <div class="card-content">
+        <div class="card {% if card.center != true %} card-horizontal {% endif %}">
+          {% if card.center %}
+
+            {% if card.title %}
+              <div class="card-title">
+                {{ card.title }}
+              </div>
+            {% endif %}
+          
+            {% if card.logo %}
+              <div class="card-logo {% if card.center != true %} card-horizontal {% endif %}">
+                <img src="{{ card.logo | relative_url }}" alt="{{ card.title }}">
+              </div>
+            {% endif %}
+
             {% for c in card.content %}
-              <p style="display: block;">{{ c }}</p><br>
-              <!-- {{ c | split: "" | join: "</p><p>" | prepend: "<p>" | append: "</p>" }} -->
+              {% if card.center %}
+                <div class="card-center-content">
+                  {{ c }}
+                </div>
+              {% else %}
+                <div class="card-content">
+                    <p>{{ c }}</p>
+                </div>
+              {% endif %}
             {% endfor %}
-          </div>
+
+          {% else %}
+
+            {% if card.title %}
+              <div class="card-title">
+                {{ card.title }}
+              </div>
+            {% endif %}
+          
+            {% if card.logo %}
+              <div class="card-logo">
+                <img src="{{ card.logo | relative_url }}" alt="{{ card.title }}">
+              </div>
+            {% endif %}
+
+            {% for c in card.content %}
+              {% if card.center %}
+                <div class="card-center-content">
+                  {{ c }}
+                </div>
+              {% else %}
+                <div class="card-content">
+                    <p>{{ c }}</p>
+                </div>
+              {% endif %}
+            {% endfor %}
+     
+          {% endif %}
+
         </div>
         {% endfor %}
       </div>
@@ -37,26 +77,6 @@ layout: page
   </div>
 </div>
 
-<!-- <div class="container-md">
-  <div class="row">
-    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-      <div class="card-section">
-        {% for card in site.data.cards %}
-        <div class="card">
-          <div class="card-logo">
-            <img src="{{ card.logo | relative_url }}" alt="{{ card.title }}">
-          </div>
-          {{ card.title }}
-          <div class="card-content">
-            {{ card.content | split: "
-" | join: "</p><p>" | prepend: "<p>" | append: "</p>" }}
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</div> -->
 
 {% assign posts = paginator.posts | default: site.posts %}
 

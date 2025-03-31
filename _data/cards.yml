@@ -1,9 +1,24 @@
 - logo: "/assets/img/avatar-icon.png"
+  center: true
   content: |
     These days, I build ML systems to accelerate research.
-- title: "OpenAI"
+- logo: "/assets/img/flower.svg"
   content: 
     - |
-      asdads
-      asdsdsdd
-    - 456
+      I joined OpenAI slightly after ChatGPT launched and have worked on both training infra and systems.
+
+      Notable contributions:
+      &#x2022; Agent & sampling infra, more efficient sampling algorithm for eval
+      &#x2022; Algorithms for collective communications that achieved better performance and scalability
+      &#x2022; Pretraining framework to abstract away the system complexities and make it easier to do model research
+      &#x2022; Data and caching systems to remove bottlenecks for large and small scale training workloads
+      &#x2022; Systems to improve resiliency of training workloads
+- logo: "/assets/img/ray.png"
+  content: 
+    - |
+      I joined Anyscale, the company behind Ray, as the co-TL for infra.
+
+      Notable contributions:
+      &#x2022; OOM detection and handling to more gracefully handle CPU memory pressure
+      &#x2022; Collaborated with OpenAI to improve the end-to-end startup time for launching new clusters and jobs within a cluster
+      &#x2022; Instance picker to optimize cluster cost
