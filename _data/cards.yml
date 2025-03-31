@@ -7,7 +7,7 @@
     - |
       I joined OpenAI slightly after ChatGPT launched and have worked on both training infra and systems.
 
-      Notable contributions:
+      <b>Notable contributions:</b>
       &#x2022; Agent & sampling infra, more efficient sampling algorithm for eval
       &#x2022; Algorithms for collective communications that achieved better performance and scalability
       &#x2022; Pretraining framework to abstract away the system complexities and make it easier to do model research
@@ -18,7 +18,7 @@
     - |
       I joined Anyscale, the company behind Ray, as the co-TL for infra.
 
-      Notable contributions:
+      <b>Notable contributions:</b>
       &#x2022; OOM detection and handling to more gracefully handle CPU memory pressure
       &#x2022; Collaborated with OpenAI to improve the end-to-end startup time for launching new clusters and jobs within a cluster
       &#x2022; Instance picker to optimize cluster cost
