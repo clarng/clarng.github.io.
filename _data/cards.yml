@@ -1,5 +1,6 @@
 - logo: "/assets/img/avatar-icon.png"
   center: true
+  partition: true
   content: |
     These days, I build ML systems to accelerate research.
 - logo: "/assets/img/flower.svg"

@@ -1172,6 +1172,9 @@ pre {
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
 }
 
 .card-content p {
