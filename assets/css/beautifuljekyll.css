@@ -1174,7 +1174,7 @@ pre {
   width: 100%;
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 .card-content p {
