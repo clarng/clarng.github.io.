@@ -1172,9 +1172,6 @@ pre {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  padding: 0 1rem;
 }
 
 .card-content p {
@@ -1218,10 +1215,15 @@ pre {
     padding: 0;
     width: 100%;
   }
+}
 
-  /* .card-title {
-    text-align: left; */
-  /* } */
+@media (min-width: 768px) {
+  .card-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 0 1rem;
+  }
+
 }
 
 .card-title {
