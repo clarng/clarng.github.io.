@@ -19,6 +19,6 @@
       I joined Anyscale, the company behind Ray, as the co-TL for infra.
 
       <b>Notable contributions:</b>
-      &#x2022; OOM detection and handling to more gracefully handle CPU memory pressure
       &#x2022; Collaborated with OpenAI to improve the end-to-end startup time for launching new clusters and jobs within a cluster
+      &#x2022; OOM detection and handling to more gracefully handle CPU memory pressure
       &#x2022; Instance picker to optimize cluster cost
