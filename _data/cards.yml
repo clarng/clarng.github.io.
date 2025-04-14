@@ -6,7 +6,7 @@
 - logo: "/assets/img/flower.svg"
   content: 
     - |
-      I joined OpenAI slightly after ChatGPT launched and have worked on both training infra and systems.
+      I joined OpenAI slightly after ChatGPT launched and have worked on both training infra and systems. Founding member of the Sora project.
 
       <b>Notable contributions:</b>
       &#x2022; Agent & sampling infra, more efficient sampling algorithm for eval
