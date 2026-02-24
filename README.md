@@ -1,8 +1,58 @@
-# Beautiful Jekyll
+# clarence.ng
 
-To run locally:
+Personal portfolio site built with Jekyll (Beautiful Jekyll theme), hosted on GitHub Pages.
 
+## Quick Start
+
+### Prerequisites
+
+- Ruby + Bundler (for Jekyll)
+- Python 3 (for the card editor)
+
+### Run the site locally
+
+```bash
 bundle exec jekyll serve
+```
+
+Open [http://localhost:4000](http://localhost:4000).
+
+### Edit homepage cards
+
+The homepage cards live in `_data/cards.yml`. You can edit them manually, or use the visual editor:
+
+```bash
+cd tools
+pip install -r requirements.txt
+python app.py
+```
+
+Open [http://localhost:5050](http://localhost:5050). The editor renders cards exactly as they appear on the site. Edit a card, hit Save, and the YAML file is updated.
+
+There is also a CLI:
+
+```bash
+cd tools
+python cli.py cards list          # show all cards
+python cli.py cards add           # add a new card interactively
+python cli.py cards edit 1        # edit card at index 1
+python cli.py cards remove 2      # remove card at index 2
+python cli.py cards reorder 0 2   # move card from position 0 to 2
+```
+
+### Publish changes
+
+From the web editor, click **Publish** and enter a commit message.
+
+Or from the CLI:
+
+```bash
+python cli.py publish -m "Update homepage cards"
+```
+
+Both stage `_data/cards.yml`, commit, and push to deploy via GitHub Pages.
+
+---
 
 [![Gem Version](https://badge.fury.io/rb/beautiful-jekyll-theme.svg)](https://badge.fury.io/rb/beautiful-jekyll-theme)
 

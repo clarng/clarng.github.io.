@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clarence.ng Card Editor</title>
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet">
+  <style>
+    :root {
+      --page-col: #FFFFFF;
+      --text-col: #404040;
+      --link-col: #008AFF;
+      --hover-col: #0085A1;
+      --body-font: 'Lora', 'Times New Roman', serif;
+      --header-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--body-font);
+      background: var(--page-col);
+      color: var(--text-col);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* --- Editor toolbar --- */
+    .editor-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #1a1a2e;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--header-font);
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .editor-toolbar .title {
+      font-weight: 700;
+      font-size: 15px;
+      margin-right: auto;
+    }
+    .tb-btn {
+      padding: 6px 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: var(--header-font);
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+    .tb-btn:hover { opacity: 0.85; }
+    .tb-btn-add { background: #008AFF; color: white; }
+    .tb-btn-publish { background: #16a34a; color: white; }
+    .tb-btn-preview { background: #6366f1; color: white; text-decoration: none; display: inline-block; }
+
+    /* --- WYSIWYG card area (matches Jekyll site) --- */
+    .card-area {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card-section {
+      align-items: center;
+    }
+
+    .card-wrapper {
+      position: relative;
+      cursor: grab;
+    }
+    .card-wrapper:active { cursor: grabbing; }
+    .card-wrapper.dragging { opacity: 0.4; }
+    .card-wrapper.drag-over::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--link-col);
+      border-radius: 2px;
+    }
+
+    /* Card overlay actions on hover */
+    .card-overlay {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      display: none;
+      gap: 4px;
+      z-index: 10;
+    }
+    .card-wrapper:hover .card-overlay { display: flex; }
+    .card-overlay button {
+      padding: 4px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      font-family: var(--header-font);
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    .card-overlay .ov-edit { color: #008AFF; border-color: #008AFF; }
+    .card-overlay .ov-del { color: #dc2626; border-color: #dc2626; }
+    .card-overlay button:hover { opacity: 0.8; }
+
+    /* --- Card styles (from beautifuljekyll.css + Bootstrap .card base) --- */
+    .card {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+      box-shadow: none;
+    }
+
+    .card.card-horizontal {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+
+    .card-logo {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 1rem;
+    }
+
+    .card-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .card-content {
+      flex: 1;
+      color: var(--text-col);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .card-content p {
+      margin: 0;
+      white-space: normal;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: pre-line;
+    }
+
+    .card-center-content {
+      flex: 1;
+      color: var(--text-col);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .card-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;
+      }
+      .card-horizontal {
+        flex-direction: row;
+      }
+      .card-logo {
+        width: 50px;
+        height: 50px;
+        margin: 0 0.75rem;
+      }
+      .card-content {
+        min-height: auto;
+        padding: 0;
+        text-align: left;
+      }
+    }
+
+    .card-title {
+      font-family: var(--header-font);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-col);
+      text-align: left;
+      flex-direction: column;
+      display: flex;
+    }
+
+    /* --- Modal --- */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 50px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: white;
+      border-radius: 8px;
+      padding: 24px;
+      width: 720px;
+      max-height: 85vh;
+      overflow-y: auto;
+      font-family: var(--header-font);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    .modal h2 { margin: 0 0 16px; font-size: 18px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 13px; color: #555; }
+    .form-group input[type="text"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: var(--header-font);
+    }
+    .form-group textarea {
+      min-height: 220px;
+      font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .checkbox-group { display: flex; gap: 20px; }
+    .checkbox-group label { display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer; }
+    .checkbox-group input[type="checkbox"] { width: auto; }
+    .modal-actions { display: flex; gap: 10px; margin-top: 18px; }
+    .modal-actions .tb-btn { padding: 8px 20px; font-size: 14px; }
+    .modal-actions .btn-cancel { background: #e5e7eb; color: #333; }
+
+    /* Live preview in modal */
+    .live-preview-section { margin-top: 14px; }
+    .live-preview-section h4 { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .live-preview-card {
+      border: 1px solid #eee;
+      border-radius: 6px;
+      padding: 16px;
+      background: #fafafa;
+    }
+
+    /* --- Toast --- */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #1a1a2e;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      z-index: 200;
+      display: none;
+      font-family: var(--header-font);
+      font-size: 14px;
+    }
+    .toast.show { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- Editor toolbar -->
+  <div class="editor-toolbar">
+    <span class="title">clarence.ng editor</span>
+    <button class="tb-btn tb-btn-add" onclick="openAddModal()">+ Add Card</button>
+    <a href="http://localhost:4000" target="_blank" class="tb-btn tb-btn-preview">Preview Site</a>
+    <button class="tb-btn tb-btn-publish" onclick="publish()">Publish</button>
+  </div>
+
+  <!-- WYSIWYG card area -->
+  <div class="card-area">
+    <div class="card-section" id="cardList"></div>
+  </div>
+
+  <!-- Editor modal -->
+  <div class="modal-overlay" id="editorModal">
+    <div class="modal">
+      <h2 id="modalTitle">Edit Card</h2>
+      <input type="hidden" id="editIndex" value="-1">
+      <div class="form-group">
+        <label>Logo</label>
+        <select id="editLogo">
+          <option value="">(none)</option>
+          {% for img in images %}
+          <option value="/assets/img/{{ img }}">{{ img }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" id="editTitle" placeholder="Optional title">
+      </div>
+      <div class="checkbox-group form-group">
+        <label><input type="checkbox" id="editCenter"> Center</label>
+        <label><input type="checkbox" id="editPartition"> Partition</label>
+      </div>
+      <div class="form-group">
+        <label>Content (HTML)</label>
+        <textarea id="editContent" oninput="updatePreview()"></textarea>
+      </div>
+      <div class="live-preview-section">
+        <h4>Live Preview</h4>
+        <div class="live-preview-card" id="livePreviewCard"></div>
+      </div>
+      <div class="modal-actions">
+        <button class="tb-btn tb-btn-add" onclick="saveCard()">Save</button>
+        <button class="tb-btn btn-cancel" onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    let cards = {{ cards | tojson }};
+
+    function renderCards() {
+      const list = document.getElementById('cardList');
+      list.innerHTML = '';
+      cards.forEach((card, i) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'card-wrapper';
+        wrapper.draggable = true;
+        wrapper.dataset.index = i;
+        wrapper.addEventListener('dragstart', onDragStart);
+        wrapper.addEventListener('dragover', onDragOver);
+        wrapper.addEventListener('dragleave', onDragLeave);
+        wrapper.addEventListener('drop', onDrop);
+        wrapper.addEventListener('dragend', onDragEnd);
+
+        wrapper.innerHTML = `
+          <div class="card-overlay">
+            <button class="ov-edit" onclick="openEditModal(${i})">Edit</button>
+            <button class="ov-del" onclick="deleteCard(${i})">Delete</button>
+          </div>
+          ${renderCard(card)}
+        `;
+        list.appendChild(wrapper);
+      });
+    }
+
+    function renderCard(card) {
+      const isCenter = !!card.center;
+      const isHorizontal = !isCenter;
+      const content = Array.isArray(card.content) ? card.content.join('') : (card.content || '');
+
+      let logoHtml = '';
+      if (card.logo) {
+        logoHtml = `
+          <div class="card-logo${isHorizontal ? '' : ''}">
+            <img src="${card.logo}" alt="${card.title || ''}">
+          </div>`;
+      }
+
+      let titleHtml = '';
+      if (card.title) {
+        titleHtml = `<div class="card-title">${card.title}</div>`;
+      }
+
+      let contentHtml = '';
+      if (isCenter) {
+        contentHtml = `<div class="card-center-content">${content}</div>`;
+      } else {
+        contentHtml = `<div class="card-content"><p>${content}</p></div>`;
+      }
+
+      return `
+        <div class="card${isHorizontal ? ' card-horizontal' : ''}">
+          ${isCenter ? titleHtml + logoHtml + contentHtml : titleHtml + logoHtml + contentHtml}
+        </div>`;
+    }
+
+    // Drag and drop
+    let dragIdx = null;
+    function onDragStart(e) {
+      dragIdx = parseInt(e.currentTarget.dataset.index);
+      e.currentTarget.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    }
+    function onDragOver(e) {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      e.currentTarget.classList.add('drag-over');
+    }
+    function onDragLeave(e) {
+      e.currentTarget.classList.remove('drag-over');
+    }
+    function onDragEnd(e) {
+      e.currentTarget.classList.remove('dragging');
+      document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+    }
+    function onDrop(e) {
+      e.preventDefault();
+      e.currentTarget.classList.remove('drag-over');
+      const toIdx = parseInt(e.currentTarget.dataset.index);
+      if (dragIdx !== null && dragIdx !== toIdx) {
+        fetch('/api/cards/reorder', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({from: dragIdx, to: toIdx})
+        }).then(r => r.json()).then(() => refreshCards());
+      }
+      dragIdx = null;
+    }
+
+    function refreshCards() {
+      fetch('/api/cards').then(r => r.json()).then(data => {
+        cards = data;
+        renderCards();
+      });
+    }
+
+    function openAddModal() {
+      document.getElementById('modalTitle').textContent = 'Add Card';
+      document.getElementById('editIndex').value = -1;
+      document.getElementById('editLogo').value = '';
+      document.getElementById('editTitle').value = '';
+      document.getElementById('editCenter').checked = false;
+      document.getElementById('editPartition').checked = false;
+      document.getElementById('editContent').value = '';
+      updatePreview();
+      document.getElementById('editorModal').classList.add('active');
+    }
+
+    function openEditModal(i) {
+      const card = cards[i];
+      document.getElementById('modalTitle').textContent = `Edit Card #${i}`;
+      document.getElementById('editIndex').value = i;
+      document.getElementById('editLogo').value = card.logo || '';
+      document.getElementById('editTitle').value = card.title || '';
+      document.getElementById('editCenter').checked = !!card.center;
+      document.getElementById('editPartition').checked = !!card.partition;
+      const content = Array.isArray(card.content) ? card.content.join('') : (card.content || '');
+      document.getElementById('editContent').value = content;
+      updatePreview();
+      document.getElementById('editorModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('editorModal').classList.remove('active');
+    }
+
+    function updatePreview() {
+      const card = {
+        logo: document.getElementById('editLogo').value,
+        title: document.getElementById('editTitle').value,
+        center: document.getElementById('editCenter').checked,
+        content: [document.getElementById('editContent').value]
+      };
+      document.getElementById('livePreviewCard').innerHTML = renderCard(card);
+    }
+
+    // Update preview when any form field changes
+    document.getElementById('editLogo').addEventListener('change', updatePreview);
+    document.getElementById('editTitle').addEventListener('input', updatePreview);
+    document.getElementById('editCenter').addEventListener('change', updatePreview);
+
+    function saveCard() {
+      const idx = parseInt(document.getElementById('editIndex').value);
+      const data = {
+        logo: document.getElementById('editLogo').value,
+        title: document.getElementById('editTitle').value,
+        center: document.getElementById('editCenter').checked,
+        partition: document.getElementById('editPartition').checked,
+        content: document.getElementById('editContent').value
+      };
+
+      let url, method;
+      if (idx === -1) {
+        url = '/api/cards';
+        method = 'POST';
+      } else {
+        url = `/api/cards/${idx}`;
+        method = 'PUT';
+      }
+
+      fetch(url, {
+        method: method,
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      }).then(r => r.json()).then(res => {
+        if (res.ok) {
+          closeModal();
+          refreshCards();
+          showToast('Card saved!');
+        } else {
+          showToast('Error: ' + (res.error || 'unknown'));
+        }
+      });
+    }
+
+    function deleteCard(i) {
+      if (!confirm(`Delete card #${i}?`)) return;
+      fetch(`/api/cards/${i}`, {method: 'DELETE'})
+        .then(r => r.json())
+        .then(() => { refreshCards(); showToast('Card deleted.'); });
+    }
+
+    function publish() {
+      const msg = prompt('Commit message:', 'Update cards');
+      if (!msg) return;
+      fetch('/api/publish', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({message: msg})
+      }).then(r => r.json()).then(res => {
+        if (res.ok) showToast('Published!');
+        else showToast('Error: ' + (res.error || 'unknown'));
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    renderCards();
+  </script>
+</body>
+</html>
