@@ -1,25 +1,48 @@
 - logo: "/assets/img/avatar-icon.png"
   center: true
   partition: true
-  content: |
-    These days, I build ML systems to accelerate research.
-- logo: "/assets/img/flower.svg"
-  content: 
+  content:
     - |
-      I joined OpenAI slightly after ChatGPT launched and have worked on both training infra and systems. Founding member of the Sora project.
-
-      <b>Notable contributions:</b>
-      &#x2022; Agent & sampling infra, more efficient sampling algorithm for eval
-      &#x2022; Algorithms for collective communications that achieved better performance and scalability
-      &#x2022; Pretraining framework to abstract away the system complexities and make it easier to do model research
-      &#x2022; Data and caching systems to remove bottlenecks for large and small scale training workloads
-      &#x2022; Systems to improve resiliency of training workloads
+      <a href="https://x.com/all_to_all">&#x1D54F; @all_to_all</a>
+- center: true
+  title: "Highlights"
+- logo: "/assets/img/xai.svg"
+  content:
+    - |
+      <b>Macrohard</b> (Jan 2026)
+      I improved the reasoning data and trained the foundation model for Macrohard, xAI's initiative to build a human emulator and a software company run entirely by AI.
+- logo: "/assets/img/xai.svg"
+  content:
+    - |
+      <b><a href="https://x.ai/news/grok-4-fast">Grok 4 Fast</a></b> (Sept 2025)
+      I advocated for, and was part of the tiger team that shipped Grok 4 Fast, bringing orders-of-magnitude improvements in cost and reasoning efficiency.
+- logo: "/assets/img/xai.svg"
+  content:
+    - |
+      <b><a href="https://x.ai/news/grok-4">Grok 4</a></b> (Jul 2025)
+      I improved and shipped parallel test-time compute for Grok 4, the flagship reasoning model.
+- logo: "/assets/img/openai.svg"
+  content:
+    - |-
+      <b><a href="https://openai.com/index/sora/">Sora</a></b> (Jan 2024)
+      Shipped Sora 1 as the #1 core contributor, starting as a forward-deployed engineer before transitioning to the project full-time.
 - logo: "/assets/img/ray.png"
-  content: 
+  content:
     - |
-      I joined Anyscale, the company behind Ray, as the co-TL for infra.
-
-      <b>Notable contributions:</b>
-      &#x2022; Collaborated with OpenAI to improve the end-to-end startup time for launching new clusters and jobs within a cluster
-      &#x2022; OOM detection and handling to more gracefully handle CPU memory pressure
-      &#x2022; Instance picker to optimize cluster cost
+      <b><a href="https://www.anyscale.com/blog/automatic-and-optimistic-memory-scheduling-for-ml-workloads-in-ray">Anyscale / Ray</a></b> (Mar 2023)
+      Joined as a TL for Anyscale / Ray. Developed the algorithm for optimistic memory scheduling for ML workloads.
+- logo: "/assets/img/arxiv.svg"
+  content:
+    - |
+      <b><a href="https://arxiv.org/pdf/1703.10593">Stealth</a></b> (Jun 2022)
+      I built AI prototypes that leverage GANs to personalize content at scale.
+- logo: "/assets/img/b8.svg"
+  content:
+    - |
+      <b><a href="https://tech.facebook.com/engineering/2019/12/portal-december-updates/">Facebook Building 8</a></b> (Jun 2020)
+      TL for Augmented Reality technology and frameworks at Building 8, Facebook's DARPA-inspired hardware lab founded by Regina Dugan, former director of DARPA. Shipped the smart camera and AR experiences on Portal, the flagship video product.
+- logo: "/assets/img/k8s.svg"
+  content:
+    - |
+      <b><a href="https://kubernetes.io/">Kubernetes</a></b> (Jul 2015)
+      Core contributor for Google's cluster management systems, transitioning the team from Borg to Kubernetes.
