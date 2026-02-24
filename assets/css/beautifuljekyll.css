@@ -1220,10 +1220,9 @@ pre {
 }
 
 @media (min-width: 768px) {
-  .card-content {
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    padding: 0 1rem;
+  .card-horizontal {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
   }
 
 }
