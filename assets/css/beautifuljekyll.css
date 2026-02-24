@@ -1210,8 +1210,9 @@ pre {
     width: 100%;
   }
 
-  .card-horizontal {
+  .card.card-horizontal {
     flex-direction: row;
+    border-bottom: 1px solid #ddd !important;
   }
 
   .card-logo {
