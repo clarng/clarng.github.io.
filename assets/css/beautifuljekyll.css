@@ -1136,9 +1136,14 @@ pre {
   display: flex;
   align-items: center;
   background: none;
-  border: none;
+  border: none !important;
   box-shadow: none;
   transition: transform 0.2s ease-in-out;
+}
+
+.card-horizontal {
+  border-bottom: 1px solid #ddd !important;
+  padding-bottom: 0.5rem;
 }
 
 .card-horizontal {
@@ -1217,14 +1222,6 @@ pre {
     padding: 0;
     text-align: left;
   }
-}
-
-@media (min-width: 768px) {
-  .card-horizontal {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.5rem;
-  }
-
 }
 
 .card-title {
