@@ -7,7 +7,7 @@
       <br>
       I spend most of my time on AI these days as it seems to have the perfect blend of hard problems to solve combined with the impact it can make to the world.
       <br><br>
-      Before this, I spent years in the trenches of distributed systems — fault tolerance at scale, consensus protocols, virtual clocks, and the various ways to reason about consistency. Tons of fun (and hard) problems that are well understood by the community at this point.
+      Before this, I spent years in the trenches of distributed systems — fault tolerance at scale, consensus protocols, virtual clocks, and the various ways to reason about consistency. Tons of fun (and hard) problems that are well understood by the community at this point, and luckily somewhat applicable to AI.
 
       <br><br>
       Note I also go by Ryan Ng.
@@ -26,11 +26,6 @@
     - |
       <b><a href="https://x.ai/news/grok-4-fast">Grok 4 Fast</a></b> (Sept 2025)
       I advocated for, and was part of the tiger team that shipped Grok 4 Fast, bringing orders-of-magnitude improvements in cost and reasoning efficiency.
-- logo: "/assets/img/arxiv.svg"
-  content:
-    - |
-      <b><a href="https://arxiv.org/pdf/1703.10593">Style transfer</a></b> (Jun 2022)
-      I built AI prototypes that leverage GANs to personalize content at scale.
 - logo: "/assets/img/xai.svg"
   content:
     - |
@@ -46,6 +41,11 @@
     - |
       <b><a href="https://www.anyscale.com/blog/automatic-and-optimistic-memory-scheduling-for-ml-workloads-in-ray">Ray</a></b> (Mar 2023)
       Joined as a TL for Anyscale / Ray. Developed the algorithm for optimistic memory scheduling for ML workloads.
+- logo: "/assets/img/arxiv.svg"
+  content:
+    - |
+      <b><a href="https://arxiv.org/pdf/1703.10593">Style transfer</a></b> (Jun 2022)
+      I built AI prototypes that leverage GANs to personalize content at scale.
 - logo: "/assets/img/b8.svg"
   content:
     - |
