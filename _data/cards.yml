@@ -5,7 +5,7 @@
     - |
       <b style="font-size: 1.5rem;">Clarence Ng</b>
       <br>
-      These days, I train and debug AI models, with a focus on reasoning and multimodal systems
+      These days, I train and debug AI models, with a focus on reasoning and multimodal systems.
       <br><br>
       Before this, I spent years in the trenches of distributed systems — fault tolerance at scale, consensus protocols, virtual clocks, and the various ways to reason about consistency. Tons of fun (and hard) problems that are well understood by the community at this point, and luckily somewhat applicable to AI.
 
