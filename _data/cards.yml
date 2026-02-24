@@ -3,9 +3,19 @@
   partition: true
   content:
     - |
-      <a href="https://x.com/all_to_all">&#x1D54F; @all_to_all</a>
+      <b style="font-size: 1.5rem;">Clarence Ng</b>
+      <br>
+      I spend most of my time on AI these days as it seems to have the perfect blend of hard problems to solve combined with the impact it can make to the world.
+      <br><br>
+      Before this, I spent years in the trenches of distributed systems — fault tolerance at scale, consensus protocols, virtual clocks, and the various ways to reason about consistency. Tons of fun (and hard) problems that are well understood by the community at this point.
+
+      <br><br>
+      Note I also go by Ryan Ng.
+      <br><br>
+      Feel free to support my 
+      <a href="https://x.com/all_to_all">baby &#x1D54F;  handle</a>
 - center: true
-  title: "Highlights"
+  title: "Project Highlights"
 - logo: "/assets/img/xai.svg"
   content:
     - |
@@ -16,6 +26,11 @@
     - |
       <b><a href="https://x.ai/news/grok-4-fast">Grok 4 Fast</a></b> (Sept 2025)
       I advocated for, and was part of the tiger team that shipped Grok 4 Fast, bringing orders-of-magnitude improvements in cost and reasoning efficiency.
+- logo: "/assets/img/arxiv.svg"
+  content:
+    - |
+      <b><a href="https://arxiv.org/pdf/1703.10593">Style transfer</a></b> (Jun 2022)
+      I built AI prototypes that leverage GANs to personalize content at scale.
 - logo: "/assets/img/xai.svg"
   content:
     - |
@@ -29,18 +44,13 @@
 - logo: "/assets/img/ray.png"
   content:
     - |
-      <b><a href="https://www.anyscale.com/blog/automatic-and-optimistic-memory-scheduling-for-ml-workloads-in-ray">Anyscale / Ray</a></b> (Mar 2023)
+      <b><a href="https://www.anyscale.com/blog/automatic-and-optimistic-memory-scheduling-for-ml-workloads-in-ray">Ray</a></b> (Mar 2023)
       Joined as a TL for Anyscale / Ray. Developed the algorithm for optimistic memory scheduling for ML workloads.
-- logo: "/assets/img/arxiv.svg"
-  content:
-    - |
-      <b><a href="https://arxiv.org/pdf/1703.10593">Stealth</a></b> (Jun 2022)
-      I built AI prototypes that leverage GANs to personalize content at scale.
 - logo: "/assets/img/b8.svg"
   content:
     - |
-      <b><a href="https://tech.facebook.com/engineering/2019/12/portal-december-updates/">Facebook Building 8</a></b> (Jun 2020)
-      TL for Augmented Reality technology and frameworks at Building 8, Facebook's DARPA-inspired hardware lab founded by Regina Dugan, former director of DARPA. Shipped the smart camera and AR experiences on Portal, the flagship video product.
+      <b><a href="https://tech.facebook.com/engineering/2019/12/portal-december-updates/">Portal / smart camera</a></b> (Jun 2020)
+      TL for Augmented Reality technology and frameworks at Building 8, Facebook's DARPA-inspired hardware lab founded by Regina Dugan. Shipped the smart camera and AR experiences on Portal, the flagship video product.
 - logo: "/assets/img/k8s.svg"
   content:
     - |
