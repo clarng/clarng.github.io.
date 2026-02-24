@@ -5,15 +5,15 @@
     - |
       <b style="font-size: 1.5rem;">Clarence Ng</b>
       <br>
-      I spend most of my time on AI these days as it seems to have the perfect blend of hard problems to solve combined with the impact it can make to the world.
+      These days, I train and debug AI models, with a focus on reasoning and multimodal systems
       <br><br>
       Before this, I spent years in the trenches of distributed systems — fault tolerance at scale, consensus protocols, virtual clocks, and the various ways to reason about consistency. Tons of fun (and hard) problems that are well understood by the community at this point, and luckily somewhat applicable to AI.
 
-      <br><br>
-      Note I also go by Ryan Ng.
-      <br><br>
-      Feel free to support my 
-      <a href="https://x.com/all_to_all">baby &#x1D54F;  handle</a>
+      <br/><br/>
+      I also go by Ryan Ng.
+      <p>
+      My <a href="https://x.com/all_to_all">baby &#x1D54F;  handle</a>
+      </p>
 - center: true
   title: "Project Highlights"
 - logo: "/assets/img/xai.svg"
