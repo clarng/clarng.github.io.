@@ -2,15 +2,12 @@
   center: true
   partition: true
   content:
-    - |
+    - |-
       <b style="font-size: 1.5rem;">Clarence Ng</b>
       <br>
-      These days, I train and debug AI models, with a focus on reasoning and multimodal systems.
+      I work at the intersection of model training and ML systems. Ran ablations for RL curriculum. Hand wrote the full set of GPU/CPU collectives for fun.
       <br><br>
-      Before this, I spent years in the trenches of distributed systems — fault tolerance at scale, consensus protocols, virtual clocks, and the various ways to reason about consistency. Tons of fun (and hard) problems that are well understood by the community at this point, and luckily somewhat applicable to AI.
-
-      <br/><br/>
-      I also go by Ryan Ng.
+      My other expertise is in distributed systems — fault tolerance at scale, consensus protocols, data consistency. Tons of fun (and hard) problems that are well understood at this point, with some luckily applicable to machine learning.
       <p>
       My <a href="https://x.com/all_to_all">baby &#x1D54F;  handle</a>
       </p>
@@ -18,19 +15,19 @@
   title: "Some of my projects"
 - logo: "/assets/img/xai.svg"
   content:
-    - |
+    - |-
       <b>Macrohard</b> (Jan 2026)
-      I improved the reasoning data and trained the foundation model for Macrohard, xAI's initiative to build a human emulator and a software company run entirely by AI.
+      I improved the reasoning data and trained a foundation model from scratch that is targeted for computer use.
 - logo: "/assets/img/xai.svg"
   content:
-    - |
-      <b><a href="https://x.ai/news/grok-4-fast">Grok 4 Fast</a></b> (Sept 2025)
-      I advocated for, and was part of the tiger team that shipped Grok 4 Fast, bringing orders-of-magnitude improvements in cost and reasoning efficiency.
+    - |-
+      <b><a href="https://x.ai/news/grok-4-fast">Grok Fast</a></b> (Sept 2025)
+      I advocated for Grok Fast and led the infra work. Scaled the agent pipelines and shipped the model in record time.
 - logo: "/assets/img/xai.svg"
   content:
-    - |
-      <b><a href="https://x.ai/news/grok-4">Grok 4</a></b> (Jul 2025)
-      I improved and shipped parallel test-time compute for Grok 4, the flagship reasoning model.
+    - |-
+      <b><a href="https://x.ai/news/grok-4">Grok</a></b> (Jul 2025-)
+      Shipped parallel test-time compute. Scaled and stabilized the RL big run.
 - logo: "/assets/img/openai.svg"
   content:
     - |-
@@ -38,21 +35,21 @@
       Shipped Sora 1 as the #1 core contributor, starting as a forward-deployed engineer before transitioning to the project full-time.
 - logo: "/assets/img/ray.png"
   content:
-    - |
+    - |-
       <b><a href="https://www.anyscale.com/blog/automatic-and-optimistic-memory-scheduling-for-ml-workloads-in-ray">Ray</a></b> (Mar 2023)
-      Joined as a TL for Anyscale / Ray. Developed the algorithm for optimistic memory scheduling for ML workloads.
+      TL for Anyscale / Ray. Shipped optimistic memory-based scheduling for ML workloads.
 - logo: "/assets/img/arxiv.svg"
   content:
     - |
       <b><a href="https://arxiv.org/pdf/1703.10593">Style transfer</a></b> (Jun 2022)
-      I built AI prototypes that leverage GANs to personalize content at scale.
+      I built prototypes that leverage GANs to personalize content at scale.
 - logo: "/assets/img/b8.svg"
   content:
-    - |
+    - |-
       <b><a href="https://tech.facebook.com/engineering/2019/12/portal-december-updates/">Portal / smart camera</a></b> (Jun 2020)
-      TL for Augmented Reality technology and frameworks at Building 8, Facebook's DARPA-inspired hardware lab founded by Regina Dugan. Shipped the smart camera and AR experiences on Portal, the flagship video product.
+      TL for Augmented Reality platform at Building 8, Facebook's DARPA-inspired hardware lab. Shipped the smart camera and AR experiences on Portal, the flagship video product.
 - logo: "/assets/img/k8s.svg"
   content:
     - |
       <b><a href="https://kubernetes.io/">Kubernetes</a></b> (Jul 2015)
-      Core contributor for Google's cluster management systems, transitioning the team from Borg to Kubernetes.
+      Core contributor for Google's cluster management systems, transitioning the company from Borg to Kubernetes.
