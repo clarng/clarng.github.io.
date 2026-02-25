@@ -5,7 +5,8 @@
     - |-
       <b style="font-size: 1.5rem;">Clarence Ng</b>
       <br>
-      I work at the intersection of model training and ML systems. Ran ablations for RL curriculum. Hand wrote the full set of GPU/CPU collectives for fun.
+      I work at the intersection of model training and ML systems. Trained the first Video Gen model. Made RL and Agents go Vroom.
+
       <br><br>
       My other expertise is in distributed systems — fault tolerance at scale, consensus protocols, data consistency. Tons of fun (and hard) problems that are well understood at this point, with some luckily applicable to machine learning.
       <p>
@@ -16,13 +17,13 @@
 - logo: "/assets/img/xai.svg"
   content:
     - |-
-      <b>Macrohard</b> (Jan 2026)
-      I improved the reasoning data and trained a foundation model from scratch that is targeted for computer use.
+      <b>Computer use</b> (Jan 2026)
+      Improved the reasoning data and trained a foundation model from scratch that is targeted for computer use.
 - logo: "/assets/img/xai.svg"
   content:
     - |-
       <b><a href="https://x.ai/news/grok-4-fast">Grok Fast</a></b> (Sept 2025)
-      I advocated for Grok Fast and led the infra work. Scaled the agent pipelines and shipped the model in record time.
+      Advocated for Grok Fast and led the infra work. Scaled the agent pipelines and datasets.
 - logo: "/assets/img/xai.svg"
   content:
     - |-
@@ -38,16 +39,6 @@
     - |-
       <b><a href="https://www.anyscale.com/blog/automatic-and-optimistic-memory-scheduling-for-ml-workloads-in-ray">Ray</a></b> (Mar 2023)
       TL for Anyscale / Ray. Shipped optimistic memory-based scheduling for ML workloads.
-- logo: "/assets/img/arxiv.svg"
-  content:
-    - |
-      <b><a href="https://arxiv.org/pdf/1703.10593">Style transfer</a></b> (Jun 2022)
-      I built prototypes that leverage GANs to personalize content at scale.
-- logo: "/assets/img/b8.svg"
-  content:
-    - |-
-      <b><a href="https://tech.facebook.com/engineering/2019/12/portal-december-updates/">Portal / smart camera</a></b> (Jun 2020)
-      TL for Augmented Reality platform at Building 8, Facebook's DARPA-inspired hardware lab. Shipped the smart camera and AR experiences on Portal, the flagship video product.
 - logo: "/assets/img/k8s.svg"
   content:
     - |
