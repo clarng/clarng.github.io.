@@ -5,10 +5,10 @@
     - |-
       <b style="font-size: 1.5rem;">Clarence Ng</b>
       <br>
-      I work at the intersection of model training and ML systems. Trained the first Video Gen model. Made RL and Agents go Vroom.
+      I work at the intersection of model training and ML systems engineering. Scaled up the first diffusion-based transformer for VideoGen. Distilled larger models. Researched new architecture to improve long-context performance.
 
       <br><br>
-      My other expertise is in distributed systems — fault tolerance at scale, consensus protocols, data consistency. Tons of fun (and hard) problems that are well understood at this point, with some luckily applicable to machine learning.
+      My other expertise is in distributed systems — fault tolerance at scale, consensus protocols, data consistency. Tons of fun (and hard) problems that are well understood at this point, with some applicable to machine learning.
       <p>
       My <a href="https://x.com/all_to_all">baby &#x1D54F;  handle</a>
       </p>
@@ -23,12 +23,12 @@
   content:
     - |-
       <b><a href="https://x.ai/news/grok-4-fast">Grok Fast</a></b> (Sept 2025)
-      Advocated for Grok Fast and led the infra work. Scaled the agent pipelines and datasets.
+      Advocated for Grok Fast and led the midtrain infra work. Scaled the agent pipelines and datasets.
 - logo: "/assets/img/xai.svg"
   content:
     - |-
       <b><a href="https://x.ai/news/grok-4">Grok</a></b> (Jul 2025-)
-      Shipped parallel test-time compute. Scaled and stabilized the RL big run.
+      Shipped parallel test-time compute. Enabled GB inference. Scaled and stabilized the RL big run.
 - logo: "/assets/img/openai.svg"
   content:
     - |-
@@ -38,7 +38,7 @@
   content:
     - |-
       <b><a href="https://www.anyscale.com/blog/automatic-and-optimistic-memory-scheduling-for-ml-workloads-in-ray">Ray</a></b> (Mar 2023)
-      TL for Anyscale / Ray. Shipped optimistic memory-based scheduling for ML workloads.
+      TL for Anyscale / Ray. Shipped optimistic memory-based scheduling, faster job start, autoscaling. Distributed object store & queue.
 - logo: "/assets/img/k8s.svg"
   content:
     - |
