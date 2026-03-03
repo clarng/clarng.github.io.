@@ -5,7 +5,7 @@
     - |-
       <b style="font-size: 1.5rem;">Clarence Ng</b>
       <br>
-      I work at the intersection of model training and ML systems engineering. Scaled up the first diffusion-based transformer for VideoGen. Distilled larger models. Researched new architecture to improve long-context performance.
+      I work at the intersection of model training and ML systems engineering. Scaled up the first diffusion-based transformer for VideoGen. Large model distillation. Researched new architecture to improve long-context performance for real-time applications.
 
       <br><br>
       My other expertise is in distributed systems — fault tolerance at scale, consensus protocols, data consistency. Tons of fun (and hard) problems that are well understood at this point, with some applicable to machine learning.
@@ -38,7 +38,12 @@
   content:
     - |-
       <b><a href="https://www.anyscale.com/blog/automatic-and-optimistic-memory-scheduling-for-ml-workloads-in-ray">Ray</a></b> (Mar 2023)
-      TL for Anyscale / Ray. Shipped optimistic memory-based scheduling, faster job start, autoscaling. Distributed object store & queue.
+      Tech lead for Anyscale / Ray. Shipped optimistic memory-based scheduling, faster job start, autoscaling. Distributed object store & queue.
+- logo: "/assets/img/b8.svg"
+  content:
+    - |-
+      <b><a href="https://www.meta.com/portal/features/smart-camera/">Building 8</a></b> (Jan 2020)
+      Tech lead / manager for Ambient Computing & AR Platform for Building 8, Reality Labs. Shipped real-time AI experiences for their flagship video device. Explored AI approaches to reducing production cost of AR content.
 - logo: "/assets/img/k8s.svg"
   content:
     - |
