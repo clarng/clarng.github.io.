@@ -1237,3 +1237,11 @@ pre {
   flex-direction: column;
   display: flex;
 }
+
+/* Desktop left accent line */
+@media (min-width: 992px) {
+  main > .row > [class*="col-"] {
+    border-left: 3px solid var(--link-col);
+    padding-left: 2rem;
+  }
+}
